@@ -1,34 +1,34 @@
-#include "NeuroLayer.hpp"
+#include "NeuralLayer.hpp"
 
 #include <QDebug>
 
-NeuroLayer::NeuroLayer()
+NeuralLayer::NeuralLayer()
 {
 }
 
-bool NeuroLayer::empty() const
+bool NeuralLayer::empty() const
 {
     return m_neurons.empty();
 }
 
-int NeuroLayer::neuronNumber() const
+int NeuralLayer::neuronNumber() const
 {
     return m_neurons.size();
 }
 
-Neuron &NeuroLayer::neuron(const int index)
+Neuron &NeuralLayer::neuron(const int index)
 {
     Q_ASSERT(0 <= index && index < neuronNumber());
     return m_neurons[index];
 }
 
-const Neuron &NeuroLayer::neuron(const int index) const
+const Neuron &NeuralLayer::neuron(const int index) const
 {
     Q_ASSERT(0 <= index && index < neuronNumber());
     return m_neurons[index];
 }
 
-int NeuroLayer::inputNumber() const
+int NeuralLayer::inputNumber() const
 {
     if (empty())
         return 0;
@@ -36,7 +36,7 @@ int NeuroLayer::inputNumber() const
         return neuron(0).inputNumber(); // equal among neurons
 }
 
-int NeuroLayer::outputNumber() const
+int NeuralLayer::outputNumber() const
 {
     return neuronNumber();
 }

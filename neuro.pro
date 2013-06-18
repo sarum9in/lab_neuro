@@ -12,15 +12,15 @@ TEMPLATE = lib
 DEFINES += NEURO_LIBRARY
 
 SOURCES += Neuron.cpp \
-    NeuroNet.cpp \
-    NeuroLayer.cpp \
-    ActivationFunction.cpp
+    ActivationFunction.cpp \
+    NeuralLayer.cpp \
+    NeuralNetwork.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
-    NeuroNet.hpp \
-    NeuroLayer.hpp \
-    ActivationFunction.hpp
+    ActivationFunction.hpp \
+    NeuralLayer.hpp \
+    NeuralNetwork.hpp
 
 unix:!symbian {
     maemo5 {

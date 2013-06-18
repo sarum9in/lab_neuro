@@ -7,10 +7,10 @@
 
 #include <QVector>
 
-class NEUROSHARED_EXPORT NeuroLayer
+class NEUROSHARED_EXPORT NeuralLayer
 {
 public:
-    NeuroLayer();
+    NeuralLayer();
 
     bool empty() const;
     int neuronNumber() const;

@@ -1,63 +1,63 @@
-#include "NeuroNet.hpp"
+#include "NeuralNetwork.hpp"
 
 #include <QDebug>
 
-NeuroNet::NeuroNet()
+NeuralNetwork::NeuralNetwork()
 {
 }
 
-bool NeuroNet::empty() const
+bool NeuralNetwork::empty() const
 {
     return m_layers.empty();
 }
 
-int NeuroNet::layerNumber() const
+int NeuralNetwork::layerNumber() const
 {
     return m_layers.size();
 }
 
-NeuroLayer &NeuroNet::layer(const int index)
+NeuralLayer &NeuralNetwork::layer(const int index)
 {
     Q_ASSERT(0 <= index && index < layerNumber());
     return m_layers[index];
 }
 
-const NeuroLayer &NeuroNet::layer(const int index) const
+const NeuralLayer &NeuralNetwork::layer(const int index) const
 {
     Q_ASSERT(0 <= index && index < layerNumber());
     return m_layers[index];
 }
 
-NeuroLayer &NeuroNet::firstLayer()
+NeuralLayer &NeuralNetwork::firstLayer()
 {
     Q_ASSERT(!empty());
     return m_layers.first();
 }
 
-const NeuroLayer &NeuroNet::firstLayer() const
+const NeuralLayer &NeuralNetwork::firstLayer() const
 {
     Q_ASSERT(!empty());
     return m_layers.first();
 }
 
-NeuroLayer &NeuroNet::lastLayer()
+NeuralLayer &NeuralNetwork::lastLayer()
 {
     Q_ASSERT(!empty());
     return m_layers.last();
 }
 
-const NeuroLayer &NeuroNet::lastLayer() const
+const NeuralLayer &NeuralNetwork::lastLayer() const
 {
     Q_ASSERT(!empty());
     return m_layers.last();
 }
 
-int NeuroNet::inputNumber() const
+int NeuralNetwork::inputNumber() const
 {
     return firstLayer().inputNumber();
 }
 
-int NeuroNet::outputNumber() const
+int NeuralNetwork::outputNumber() const
 {
     return lastLayer().outputNumber();
 }
