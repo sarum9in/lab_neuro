@@ -16,6 +16,10 @@ public:
     int neuronNumber() const;
     Neuron &neuron(const int index);
     const Neuron &neuron(const int index) const;
+    void pushFront(const Neuron &neuron);
+    void pushBack(const Neuron &neuron);
+    void popFront();
+    void popBack();
 
     int inputNumber() const override;
     int outputNumber() const override;

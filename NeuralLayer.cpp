@@ -2,9 +2,7 @@
 
 #include <QDebug>
 
-NeuralLayer::NeuralLayer()
-{
-}
+NeuralLayer::NeuralLayer() {}
 
 bool NeuralLayer::empty() const
 {
@@ -26,6 +24,28 @@ const Neuron &NeuralLayer::neuron(const int index) const
 {
     Q_ASSERT(0 <= index && index < neuronNumber());
     return m_neurons[index];
+}
+
+void NeuralLayer::pushFront(const Neuron &neuron)
+{
+    Q_ASSERT(empty() || inputNumber() == neuron.inputNumber());
+    m_neurons.push_front(neuron);
+}
+
+void NeuralLayer::pushBack(const Neuron &neuron)
+{
+    Q_ASSERT(empty() || inputNumber() == neuron.inputNumber());
+    m_neurons.push_front(neuron);
+}
+
+void NeuralLayer::popFront()
+{
+    m_neurons.pop_front();
+}
+
+void NeuralLayer::popBack()
+{
+    m_neurons.pop_back();
 }
 
 int NeuralLayer::inputNumber() const
