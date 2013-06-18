@@ -5,12 +5,18 @@
 #include "DataTransformation.hpp"
 #include "NeuralLayer.hpp"
 
+#include <QMetaType>
 #include <QVector>
 
 class NEUROSHARED_EXPORT NeuralNetwork: public DataTransformation
 {
 public:
     NeuralNetwork()=default;
+
+    NeuralNetwork(const NeuralNetwork &)=default;
+    NeuralNetwork(NeuralNetwork &&)=default;
+    NeuralNetwork &operator=(const NeuralNetwork &)=default;
+    NeuralNetwork &operator=(NeuralNetwork &&)=default;
 
     bool empty() const;
     int layerNumber() const;
@@ -36,3 +42,5 @@ protected:
 private:
     QVector<NeuralLayer> m_layers;
 };
+
+Q_DECLARE_METATYPE(NeuralNetwork)

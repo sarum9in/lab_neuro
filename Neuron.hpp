@@ -5,6 +5,7 @@
 #include "ActivationFunction.hpp"
 #include "DataTransformation.hpp"
 
+#include <QMetaType>
 #include <QVector>
 
 typedef QVector<qreal> WeightVector;
@@ -15,6 +16,11 @@ public:
     Neuron();
     explicit Neuron(const ActivationFunctionPointer &activationFunction);
     Neuron(const ActivationFunctionPointer &activationFunction, const WeightVector &weights);
+
+    Neuron(const Neuron &)=default;
+    Neuron(Neuron &&)=default;
+    Neuron &operator=(const Neuron &)=default;
+    Neuron &operator=(Neuron &&)=default;
 
     /// Check if ActivationFunction is initialized.
     bool hasActivationFunction() const;
@@ -45,3 +51,5 @@ private:
     ActivationFunctionPointer m_activationFunction;
     WeightVector m_weights;
 };
+
+Q_DECLARE_METATYPE(Neuron)
