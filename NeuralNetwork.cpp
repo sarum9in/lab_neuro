@@ -2,9 +2,7 @@
 
 #include <QDebug>
 
-NeuralNetwork::NeuralNetwork()
-{
-}
+NeuralNetwork::NeuralNetwork() {}
 
 bool NeuralNetwork::empty() const
 {
@@ -50,6 +48,28 @@ const NeuralLayer &NeuralNetwork::outputLayer() const
 {
     Q_ASSERT(!empty());
     return m_layers.last();
+}
+
+void NeuralNetwork::pushFront(const NeuralLayer &layer)
+{
+    Q_ASSERT(empty() || inputNumber() == layer.outputNumber());
+    m_layers.push_front(layer);
+}
+
+void NeuralNetwork::pushBack(const NeuralLayer &layer)
+{
+    Q_ASSERT(empty() || outputNumber() == layer.inputNumber());
+    m_layers.push_back(layer);
+}
+
+void NeuralNetwork::popFront()
+{
+    m_layers.pop_front();
+}
+
+void NeuralNetwork::popBack()
+{
+    m_layers.pop_back();
 }
 
 int NeuralNetwork::inputNumber() const

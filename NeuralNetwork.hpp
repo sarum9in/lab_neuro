@@ -20,6 +20,10 @@ public:
     const NeuralLayer &inputLayer() const;
     NeuralLayer &outputLayer();
     const NeuralLayer &outputLayer() const;
+    void pushFront(const NeuralLayer &layer);
+    void pushBack(const NeuralLayer &layer);
+    void popFront();
+    void popBack();
 
     int inputNumber() const override;
     int outputNumber() const override;
