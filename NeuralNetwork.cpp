@@ -70,6 +70,12 @@ void NeuralNetwork::popBack()
     m_layers.pop_back();
 }
 
+void NeuralNetwork::setActivationFunction(const ActivationFunctionPointer &activationFunction)
+{
+    for (NeuralLayer &layer: m_layers)
+        layer.setActivationFunction(activationFunction);
+}
+
 int NeuralNetwork::inputNumber() const
 {
     return inputLayer().inputNumber();

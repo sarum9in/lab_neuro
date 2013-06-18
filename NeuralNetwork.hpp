@@ -25,6 +25,8 @@ public:
     void popFront();
     void popBack();
 
+    void setActivationFunction(const ActivationFunctionPointer &activationFunction);
+
     int inputNumber() const override;
     int outputNumber() const override;
 
