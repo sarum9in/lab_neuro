@@ -2,8 +2,6 @@
 
 #include <QDebug>
 
-NeuralLayer::NeuralLayer() {}
-
 bool NeuralLayer::empty() const
 {
     return m_neurons.empty();

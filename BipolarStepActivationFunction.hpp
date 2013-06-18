@@ -7,7 +7,7 @@
 class NEUROSHARED_EXPORT BipolarStepActivationFunction: public ActivationFunction
 {
 public:
-    BipolarStepActivationFunction();
+    BipolarStepActivationFunction()=default;
 
     qreal compute(qreal arg) const override;
 };

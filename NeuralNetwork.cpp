@@ -2,8 +2,6 @@
 
 #include <QDebug>
 
-NeuralNetwork::NeuralNetwork() {}
-
 bool NeuralNetwork::empty() const
 {
     return m_layers.empty();

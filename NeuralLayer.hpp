@@ -10,7 +10,7 @@
 class NEUROSHARED_EXPORT NeuralLayer: public DataTransformation
 {
 public:
-    NeuralLayer();
+    NeuralLayer()=default;
 
     bool empty() const;
     int neuronNumber() const;
