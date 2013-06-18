@@ -24,7 +24,8 @@ SOURCES += Neuron.cpp \
     TanSigmoidActivationFunction.cpp \
     Supervisor.cpp \
     ThreadedSupervisor.cpp \
-    DeltaRuleSupervisor.cpp
+    DeltaRuleSupervisor.cpp \
+    BackpropagationSupervisor.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -38,7 +39,8 @@ HEADERS += Neuron.hpp\
     TanSigmoidActivationFunction.hpp \
     Supervisor.hpp \
     ThreadedSupervisor.hpp \
-    DeltaRuleSupervisor.hpp
+    DeltaRuleSupervisor.hpp \
+    BackpropagationSupervisor.hpp
 
 unix:!symbian {
     maemo5 {
