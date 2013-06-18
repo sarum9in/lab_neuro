@@ -1,5 +1,4 @@
-#ifndef NEUROLAYER_HPP
-#define NEUROLAYER_HPP
+#pragma once
 
 #include "neuro_global.hpp"
 
@@ -27,5 +26,3 @@ protected:
 private:
     QVector<Neuron> m_neurons;
 };
-
-#endif // NEUROLAYER_HPP

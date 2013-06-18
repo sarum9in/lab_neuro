@@ -1,5 +1,4 @@
-#ifndef DATATRANSFORMATION_HPP
-#define DATATRANSFORMATION_HPP
+#pragma once
 
 #include "neuro_global.hpp"
 
@@ -20,5 +19,3 @@ public:
 protected:
     virtual DataVector transform_(const DataVector &data) const=0;
 };
-
-#endif // DATATRANSFORMATION_HPP

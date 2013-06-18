@@ -1,5 +1,4 @@
-#ifndef NEURO_GLOBAL_HPP
-#define NEURO_GLOBAL_HPP
+#pragma once
 
 #include <QtCore/qglobal.h>
 
@@ -8,5 +7,3 @@
 #else
 #  define NEUROSHARED_EXPORT Q_DECL_IMPORT
 #endif
-
-#endif // NEURO_GLOBAL_HPP

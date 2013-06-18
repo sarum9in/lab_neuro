@@ -1,5 +1,4 @@
-#ifndef ACTIVATIONFUNCTION_HPP
-#define ACTIVATIONFUNCTION_HPP
+#pragma once
 
 #include "neuro_global.hpp"
 
@@ -15,5 +14,3 @@ public:
 };
 
 typedef QSharedPointer<ActivationFunction> ActivationFunctionPointer;
-
-#endif // ACTIVATIONFUNCTION_HPP

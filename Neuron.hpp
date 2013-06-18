@@ -1,5 +1,4 @@
-#ifndef NEURON_HPP
-#define NEURON_HPP
+#pragma once
 
 #include "neuro_global.hpp"
 
@@ -38,5 +37,3 @@ private:
     ActivationFunctionPointer m_activationFunction;
     WeightVector m_weights;
 };
-
-#endif // NEURON_HPP

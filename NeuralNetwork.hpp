@@ -1,5 +1,4 @@
-#ifndef NEURONET_HPP
-#define NEURONET_HPP
+#pragma once
 
 #include "neuro_global.hpp"
 
@@ -31,5 +30,3 @@ protected:
 private:
     QVector<NeuralLayer> m_layers;
 };
-
-#endif // NEURONET_HPP
