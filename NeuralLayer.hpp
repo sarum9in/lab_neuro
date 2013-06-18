@@ -21,7 +21,7 @@ public:
     int outputNumber() const override;
 
 protected:
-    DataVector transform_(const DataVector &data) const override;
+    DataVector transform_(const DataVector &input) const override;
 
 private:
     QVector<Neuron> m_neurons;

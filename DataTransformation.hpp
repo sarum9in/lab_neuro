@@ -11,11 +11,14 @@ class NEUROSHARED_EXPORT DataTransformation
 public:
     virtual ~DataTransformation();
 
-    DataVector transform(const DataVector &data) const;
+    DataVector transform(const DataVector &input) const;
 
     virtual int inputNumber() const=0;
     virtual int outputNumber() const=0;
 
 protected:
-    virtual DataVector transform_(const DataVector &data) const=0;
+    void checkInput(const DataVector &input) const;
+    void checkOutput(const DataVector &output) const;
+
+    virtual DataVector transform_(const DataVector &input) const=0;
 };
