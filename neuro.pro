@@ -17,14 +17,16 @@ SOURCES += Neuron.cpp \
     ActivationFunction.cpp \
     NeuralLayer.cpp \
     NeuralNetwork.cpp \
-    DataTransformation.cpp
+    DataTransformation.cpp \
+    BipolarStepActivationFunction.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
     ActivationFunction.hpp \
     NeuralLayer.hpp \
     NeuralNetwork.hpp \
-    DataTransformation.hpp
+    DataTransformation.hpp \
+    BipolarStepActivationFunction.hpp
 
 unix:!symbian {
     maemo5 {
