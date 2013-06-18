@@ -25,8 +25,12 @@ public:
     const TrainingVector &trainingSet() const;
     void setTrainingSet(const TrainingVector &trainingSet);
 
+    qreal learningSpeed() const;
+    void setLearningSpeed(const qreal learningSpeed);
+
     virtual void train(NeuralNetwork &neuralNetwork) const=0;
 
 private:
     TrainingVector m_trainingSet;
+    qreal m_learningSpeed = 1;
 };

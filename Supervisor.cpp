@@ -16,3 +16,13 @@ void Supervisor::setTrainingSet(const TrainingVector &trainingSet)
 {
     m_trainingSet = trainingSet;
 }
+
+qreal Supervisor::learningSpeed() const
+{
+    return m_learningSpeed;
+}
+
+void Supervisor::setLearningSpeed(const qreal learningSpeed)
+{
+    m_learningSpeed = learningSpeed;
+}

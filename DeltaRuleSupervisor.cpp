@@ -1,15 +1,5 @@
 #include "DeltaRuleSupervisor.hpp"
 
-qreal DeltaRuleSupervisor::learningSpeed() const
-{
-    return m_learningSpeed;
-}
-
-void DeltaRuleSupervisor::setLearningSpeed(const qreal learningSpeed)
-{
-    m_learningSpeed = learningSpeed;
-}
-
 void DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
 {
     Q_ASSERT(neuralNetwork.layerNumber() == 1);
@@ -25,7 +15,7 @@ void DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
         for (int i = 0; i < output.size(); ++i)
         {
             Neuron &neuron = layer.neuron(i);
-            const qreal delta = m_learningSpeed * (example.output[i] - output[i]) *
+            const qreal delta = learningSpeed() * (example.output[i] - output[i]) *
                                 neuron.activationFunction()->computeDerivative(weightedSum[i]);
             neuron.setBias(delta * neuron.bias());
             for (int j = 0; j < neuron.inputNumber(); ++j)
