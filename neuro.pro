@@ -21,7 +21,9 @@ SOURCES += Neuron.cpp \
     BipolarStepActivationFunction.cpp \
     BinaryStepActivationFunction.cpp \
     LogSigmoidActivationFunction.cpp \
-    TanSigmoidActivationFunction.cpp
+    TanSigmoidActivationFunction.cpp \
+    Supervisor.cpp \
+    ThreadedSupervisor.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -32,7 +34,9 @@ HEADERS += Neuron.hpp\
     BipolarStepActivationFunction.hpp \
     BinaryStepActivationFunction.hpp \
     LogSigmoidActivationFunction.hpp \
-    TanSigmoidActivationFunction.hpp
+    TanSigmoidActivationFunction.hpp \
+    Supervisor.hpp \
+    ThreadedSupervisor.hpp
 
 unix:!symbian {
     maemo5 {
