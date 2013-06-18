@@ -23,7 +23,8 @@ SOURCES += Neuron.cpp \
     LogSigmoidActivationFunction.cpp \
     TanSigmoidActivationFunction.cpp \
     Supervisor.cpp \
-    ThreadedSupervisor.cpp
+    ThreadedSupervisor.cpp \
+    DeltaRuleSupervisor.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -36,7 +37,8 @@ HEADERS += Neuron.hpp\
     LogSigmoidActivationFunction.hpp \
     TanSigmoidActivationFunction.hpp \
     Supervisor.hpp \
-    ThreadedSupervisor.hpp
+    ThreadedSupervisor.hpp \
+    DeltaRuleSupervisor.hpp
 
 unix:!symbian {
     maemo5 {
