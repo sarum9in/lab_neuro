@@ -7,6 +7,9 @@ class NEUROSHARED_EXPORT Neuron
 {
 public:
     Neuron();
+
+    int inputNumber() const;
+    int outputNumber() const;
 };
 
 #endif // NEURON_HPP
