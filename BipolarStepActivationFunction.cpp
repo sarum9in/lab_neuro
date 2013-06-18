@@ -7,3 +7,8 @@ qreal BipolarStepActivationFunction::compute(qreal arg) const
     else
         return 1;
 }
+
+qreal BipolarStepActivationFunction::computeDerivative(qreal arg) const
+{
+    return 1;
+}

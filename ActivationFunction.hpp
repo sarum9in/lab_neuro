@@ -11,6 +11,9 @@ public:
 
     /// \note Function is reentrant
     virtual qreal compute(qreal arg) const=0;
+
+    /// \note Function is reentrant
+    virtual qreal computeDerivative(qreal arg) const=0;
 };
 
 typedef QSharedPointer<ActivationFunction> ActivationFunctionPointer;

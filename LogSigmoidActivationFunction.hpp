@@ -11,6 +11,8 @@ public:
 
     qreal compute(qreal arg) const override;
 
+    qreal computeDerivative(qreal arg) const override;
+
 private:
     const qreal m_alpha;
 };

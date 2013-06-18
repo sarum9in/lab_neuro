@@ -10,4 +10,6 @@ public:
     BinaryStepActivationFunction()=default;
 
     qreal compute(qreal arg) const override;
+
+    qreal computeDerivative(qreal arg) const override;
 };

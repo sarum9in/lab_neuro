@@ -7,3 +7,8 @@ qreal BinaryStepActivationFunction::compute(qreal arg) const
     else
         return 1;
 }
+
+qreal BinaryStepActivationFunction::computeDerivative(qreal arg) const
+{
+    return 1;
+}
