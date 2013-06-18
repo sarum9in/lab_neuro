@@ -16,10 +16,10 @@ public:
     int layerNumber() const;
     NeuralLayer &layer(const int index);
     const NeuralLayer &layer(const int index) const;
-    NeuralLayer &firstLayer();
-    const NeuralLayer &firstLayer() const;
-    NeuralLayer &lastLayer();
-    const NeuralLayer &lastLayer() const;
+    NeuralLayer &inputLayer();
+    const NeuralLayer &inputLayer() const;
+    NeuralLayer &outputLayer();
+    const NeuralLayer &outputLayer() const;
 
     int inputNumber() const;
     int outputNumber() const;

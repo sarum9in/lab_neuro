@@ -28,25 +28,25 @@ const NeuralLayer &NeuralNetwork::layer(const int index) const
     return m_layers[index];
 }
 
-NeuralLayer &NeuralNetwork::firstLayer()
+NeuralLayer &NeuralNetwork::inputLayer()
 {
     Q_ASSERT(!empty());
     return m_layers.first();
 }
 
-const NeuralLayer &NeuralNetwork::firstLayer() const
+const NeuralLayer &NeuralNetwork::inputLayer() const
 {
     Q_ASSERT(!empty());
     return m_layers.first();
 }
 
-NeuralLayer &NeuralNetwork::lastLayer()
+NeuralLayer &NeuralNetwork::outputLayer()
 {
     Q_ASSERT(!empty());
     return m_layers.last();
 }
 
-const NeuralLayer &NeuralNetwork::lastLayer() const
+const NeuralLayer &NeuralNetwork::outputLayer() const
 {
     Q_ASSERT(!empty());
     return m_layers.last();
@@ -54,10 +54,10 @@ const NeuralLayer &NeuralNetwork::lastLayer() const
 
 int NeuralNetwork::inputNumber() const
 {
-    return firstLayer().inputNumber();
+    return inputLayer().inputNumber();
 }
 
 int NeuralNetwork::outputNumber() const
 {
-    return lastLayer().outputNumber();
+    return outputLayer().outputNumber();
 }
