@@ -100,3 +100,9 @@ int Neuron::outputNumber() const
 {
     return 1;
 }
+
+DataVector Neuron::transform_(const DataVector &input) const
+{
+    DataVector output = {compute(input)};
+    return output;
+}
