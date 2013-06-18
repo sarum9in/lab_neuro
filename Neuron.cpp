@@ -46,6 +46,33 @@ void Neuron::setWeights(const WeightVector &weights)
     m_weights = weights;
 }
 
+int Neuron::weightNumber() const
+{
+    return m_weights.size();
+}
+
+qreal Neuron::weight(const int index) const
+{
+    Q_ASSERT(0 <= index && index < weightNumber());
+    return m_weights[index];
+}
+
+void Neuron::setWeight(const int index, const qreal weight)
+{
+    Q_ASSERT(0 <= index && index < weightNumber());
+    m_weights[index] = weight;
+}
+
+qreal Neuron::bias() const
+{
+    return weight(0);
+}
+
+void Neuron::setBias(const qreal bias)
+{
+    setWeight(0, bias);
+}
+
 int Neuron::inputNumber() const
 {
     return m_weights.size() - 1;

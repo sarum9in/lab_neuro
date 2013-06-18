@@ -27,6 +27,12 @@ public:
     const WeightVector &weights() const;
     void setWeights(const WeightVector &weights);
 
+    int weightNumber() const;
+    qreal weight(const int index) const;
+    void setWeight(const int index, const qreal weight);
+    qreal bias() const;
+    void setBias(const qreal bias);
+
     int inputNumber() const override;
     int outputNumber() const override;
 
