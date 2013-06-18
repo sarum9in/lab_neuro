@@ -7,6 +7,9 @@ class NEUROSHARED_EXPORT NeuroLayer
 {
 public:
     NeuroLayer();
+
+    int inputNumber() const;
+    int outputNumber() const;
 };
 
 #endif // NEUROLAYER_HPP
