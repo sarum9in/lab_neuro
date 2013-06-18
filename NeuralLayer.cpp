@@ -46,6 +46,12 @@ void NeuralLayer::popBack()
     m_neurons.pop_back();
 }
 
+void NeuralLayer::setActivationFunction(const ActivationFunctionPointer &activationFunction)
+{
+    for (Neuron &neuron: m_neurons)
+        neuron.setActivationFunction(activationFunction);
+}
+
 int NeuralLayer::inputNumber() const
 {
     if (empty())
