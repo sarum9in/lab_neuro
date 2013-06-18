@@ -40,3 +40,11 @@ int NeuralLayer::outputNumber() const
 {
     return neuronNumber();
 }
+
+DataVector NeuralLayer::transform_(const DataVector &input) const
+{
+    DataVector output(outputNumber());
+    for (int i = 0; i < neuronNumber(); ++i)
+        output[i] = m_neurons[i].compute(input);
+    return output;
+}
