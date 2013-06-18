@@ -9,18 +9,22 @@ QT       -= gui
 TARGET = neuro
 TEMPLATE = lib
 
+CONFIG += c++11
+
 DEFINES += NEURO_LIBRARY
 
 SOURCES += Neuron.cpp \
     ActivationFunction.cpp \
     NeuralLayer.cpp \
-    NeuralNetwork.cpp
+    NeuralNetwork.cpp \
+    DataTransformation.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
     ActivationFunction.hpp \
     NeuralLayer.hpp \
-    NeuralNetwork.hpp
+    NeuralNetwork.hpp \
+    DataTransformation.hpp
 
 unix:!symbian {
     maemo5 {

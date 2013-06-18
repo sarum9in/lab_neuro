@@ -3,11 +3,12 @@
 
 #include "neuro_global.hpp"
 
+#include "DataTransformation.hpp"
 #include "Neuron.hpp"
 
 #include <QVector>
 
-class NEUROSHARED_EXPORT NeuralLayer
+class NEUROSHARED_EXPORT NeuralLayer: public DataTransformation
 {
 public:
     NeuralLayer();
@@ -17,8 +18,11 @@ public:
     Neuron &neuron(const int index);
     const Neuron &neuron(const int index) const;
 
-    int inputNumber() const;
-    int outputNumber() const;
+    int inputNumber() const override;
+    int outputNumber() const override;
+
+protected:
+    DataVector transform_(const DataVector &data) const override;
 
 private:
     QVector<Neuron> m_neurons;

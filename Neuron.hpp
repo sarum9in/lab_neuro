@@ -4,12 +4,13 @@
 #include "neuro_global.hpp"
 
 #include "ActivationFunction.hpp"
+#include "DataTransformation.hpp"
 
 #include <QVector>
 
 typedef QVector<qreal> WeightVector;
 
-class NEUROSHARED_EXPORT Neuron
+class NEUROSHARED_EXPORT Neuron: public DataTransformation
 {
 public:
     Neuron();
@@ -27,8 +28,11 @@ public:
     const WeightVector &weights() const;
     void setWeights(const WeightVector &weights);
 
-    int inputNumber() const;
-    int outputNumber() const;
+    int inputNumber() const override;
+    int outputNumber() const override;
+
+protected:
+    DataVector transform_(const DataVector &data) const override;
 
 private:
     ActivationFunctionPointer m_activationFunction;
