@@ -18,7 +18,8 @@ SOURCES += Neuron.cpp \
     NeuralLayer.cpp \
     NeuralNetwork.cpp \
     DataTransformation.cpp \
-    BipolarStepActivationFunction.cpp
+    BipolarStepActivationFunction.cpp \
+    BinaryStepActivationFunction.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -26,7 +27,8 @@ HEADERS += Neuron.hpp\
     NeuralLayer.hpp \
     NeuralNetwork.hpp \
     DataTransformation.hpp \
-    BipolarStepActivationFunction.hpp
+    BipolarStepActivationFunction.hpp \
+    BinaryStepActivationFunction.hpp
 
 unix:!symbian {
     maemo5 {
