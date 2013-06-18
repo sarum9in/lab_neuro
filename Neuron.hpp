@@ -33,6 +33,8 @@ public:
     qreal bias() const;
     void setBias(const qreal bias);
 
+    qreal compute(const DataVector &input) const;
+
     int inputNumber() const override;
     int outputNumber() const override;
 

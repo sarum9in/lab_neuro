@@ -73,6 +73,24 @@ void Neuron::setBias(const qreal bias)
     setWeight(0, bias);
 }
 
+qreal Neuron::compute(const DataVector &input) const
+{
+    checkInput(input);
+    Q_ASSERT(hasActivationFunction());
+    qreal s = bias();
+    // Kahan summation algorithm
+    qreal c = 0;
+    for (int i = 0; i < input.size(); ++i)
+    {
+        const qreal y = input[i] * weight(i + 1) - c;
+        const qreal t = s + y;
+        c = (t - s) - y;
+        s = t;
+    }
+    // end
+    return activationFunction()->compute(s);
+}
+
 int Neuron::inputNumber() const
 {
     return m_weights.size() - 1;
