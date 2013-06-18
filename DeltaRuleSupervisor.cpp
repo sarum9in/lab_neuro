@@ -25,7 +25,8 @@ void DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
         for (int i = 0; i < output.size(); ++i)
         {
             Neuron &neuron = layer.neuron(i);
-            const qreal delta = m_learningSpeed * (example.output[i] - output[i]) * 1 /* FIXME g(weightedSum[i]) */;
+            const qreal delta = m_learningSpeed * (example.output[i] - output[i]) *
+                                neuron.activationFunction()->computeDerivative(weightedSum[i]);
             neuron.setBias(delta * neuron.bias());
             for (int j = 0; j < neuron.inputNumber(); ++j)
                 neuron.setWeight(j + 1, neuron.weight(j + 1) * delta);
