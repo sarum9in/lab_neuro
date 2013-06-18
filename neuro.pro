@@ -13,12 +13,14 @@ DEFINES += NEURO_LIBRARY
 
 SOURCES += Neuron.cpp \
     NeuroNet.cpp \
-    NeuroLayer.cpp
+    NeuroLayer.cpp \
+    ActivationFunction.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
     NeuroNet.hpp \
-    NeuroLayer.hpp
+    NeuroLayer.hpp \
+    ActivationFunction.hpp
 
 unix:!symbian {
     maemo5 {
