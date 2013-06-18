@@ -61,3 +61,11 @@ int NeuralNetwork::outputNumber() const
 {
     return outputLayer().outputNumber();
 }
+
+DataVector NeuralNetwork::transform_(const DataVector &input) const
+{
+    DataVector v = input;
+    for (const NeuralLayer &layer: m_layers)
+        v = layer.transform(v);
+    return v;
+}
