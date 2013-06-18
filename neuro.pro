@@ -25,7 +25,8 @@ SOURCES += Neuron.cpp \
     Supervisor.cpp \
     ThreadedSupervisor.cpp \
     DeltaRuleSupervisor.cpp \
-    BackpropagationSupervisor.cpp
+    BackpropagationSupervisor.cpp \
+    GeneticSupervisor.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -40,7 +41,8 @@ HEADERS += Neuron.hpp\
     Supervisor.hpp \
     ThreadedSupervisor.hpp \
     DeltaRuleSupervisor.hpp \
-    BackpropagationSupervisor.hpp
+    BackpropagationSupervisor.hpp \
+    GeneticSupervisor.hpp
 
 unix:!symbian {
     maemo5 {
