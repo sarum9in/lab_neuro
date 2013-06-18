@@ -73,7 +73,7 @@ void Neuron::setBias(const qreal bias)
     setWeight(0, bias);
 }
 
-qreal Neuron::compute(const DataVector &input) const
+qreal Neuron::compute(const DataVector &input, qreal *weightedSum) const
 {
     checkInput(input);
     Q_ASSERT(hasActivationFunction());
@@ -88,6 +88,8 @@ qreal Neuron::compute(const DataVector &input) const
         s = t;
     }
     // end
+    if (weightedSum)
+        *weightedSum = s;
     return activationFunction()->compute(s);
 }
 
