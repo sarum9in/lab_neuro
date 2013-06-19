@@ -25,5 +25,5 @@ public:
     void setRandRange(const qreal minWeight, const qreal maxWeight);
 
 private:
-    qreal m_minWeight = 0, m_maxWeight = 1;
+    qreal m_minWeight = -1, m_maxWeight = 1;
 };
