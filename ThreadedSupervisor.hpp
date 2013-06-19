@@ -7,8 +7,7 @@
 #include <QObject>
 #include <QThread>
 
-namespace detail
-{
+namespace detail {
 class NEUROSHARED_EXPORT ThreadedSupervisorWorker: public QObject
 {
     Q_OBJECT

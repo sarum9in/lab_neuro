@@ -1,7 +1,6 @@
 #include "ThreadedSupervisor.hpp"
 
-namespace detail
-{
+namespace detail {
 ThreadedSupervisorWorker::ThreadedSupervisorWorker(Supervisor *supervisor, QObject *parent):
     QObject(parent),
     m_supervisor(supervisor)
