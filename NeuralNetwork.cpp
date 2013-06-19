@@ -70,6 +70,11 @@ void NeuralNetwork::popBack()
     m_layers.pop_back();
 }
 
+void NeuralNetwork::clear()
+{
+    m_layers.clear();
+}
+
 void NeuralNetwork::setActivationFunction(const ActivationFunctionPointer &activationFunction)
 {
     for (NeuralLayer &layer: m_layers)

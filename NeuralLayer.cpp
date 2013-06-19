@@ -46,6 +46,11 @@ void NeuralLayer::popBack()
     m_neurons.pop_back();
 }
 
+void NeuralLayer::clear()
+{
+    m_neurons.clear();
+}
+
 void NeuralLayer::setActivationFunction(const ActivationFunctionPointer &activationFunction)
 {
     for (Neuron &neuron: m_neurons)

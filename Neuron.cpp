@@ -46,6 +46,11 @@ void Neuron::setWeights(const WeightVector &weights)
     m_weights = weights;
 }
 
+void Neuron::clear()
+{
+    m_weights.fill(0, 1);
+}
+
 int Neuron::weightNumber() const
 {
     return m_weights.size();

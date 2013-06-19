@@ -32,6 +32,7 @@ public:
     /// \copydoc weights()
     const WeightVector &weights() const;
     void setWeights(const WeightVector &weights);
+    void clear();
 
     int weightNumber() const;
     qreal weight(const int index) const;

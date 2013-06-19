@@ -30,6 +30,7 @@ public:
     void pushBack(const NeuralLayer &layer);
     void popFront();
     void popBack();
+    void clear();
 
     void setActivationFunction(const ActivationFunctionPointer &activationFunction);
 
