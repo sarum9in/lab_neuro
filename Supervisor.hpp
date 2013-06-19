@@ -31,6 +31,13 @@ public:
     /// \return true if all training examples work correct
     virtual bool train(NeuralNetwork &neuralNetwork) const=0;
 
+    /*!
+     * \brief Train up to count times.
+     *
+     * \return last train() call (false if train() was not called)
+     */
+    bool trainFor(NeuralNetwork &neuralNetwork, const int count) const;
+
 private:
     TrainingVector m_trainingSet;
     qreal m_learningSpeed = 1;
