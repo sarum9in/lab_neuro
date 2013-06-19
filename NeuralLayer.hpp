@@ -36,6 +36,27 @@ protected:
     DataVector transform_(const DataVector &input) const override;
 
 private:
+    inline friend QVector<Neuron>::iterator begin(NeuralLayer &neuralLayer)
+    {
+        return neuralLayer.m_neurons.begin();
+    }
+
+    inline friend QVector<Neuron>::const_iterator begin(const NeuralLayer &neuralLayer)
+    {
+        return neuralLayer.m_neurons.begin();
+    }
+
+    inline friend QVector<Neuron>::iterator end(NeuralLayer &neuralLayer)
+    {
+        return neuralLayer.m_neurons.end();
+    }
+
+    inline friend QVector<Neuron>::const_iterator end(const NeuralLayer &neuralLayer)
+    {
+        return neuralLayer.m_neurons.end();
+    }
+
+private:
     QVector<Neuron> m_neurons;
 };
 
