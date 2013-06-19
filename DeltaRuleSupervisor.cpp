@@ -1,5 +1,7 @@
 #include "DeltaRuleSupervisor.hpp"
 
+constexpr qreal EPS = 0.01;
+
 bool DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
 {
     Q_ASSERT(neuralNetwork.layerNumber() == 1);
@@ -22,4 +24,12 @@ bool DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
                 neuron.setWeight(j + 1, neuron.weight(j + 1) + example.input[j] * delta);
         }
     }
+    qreal error = 0;
+    for (const TrainingExample &example: trainingSet())
+    {
+        DataVector output = layer.transform(example.input);
+        for (int i = 0; i < output.size(); ++i)
+            error += qAbs(output[i] - example.output[i]);
+    }
+    return error < EPS;
 }
