@@ -9,5 +9,5 @@ class NEUROSHARED_EXPORT GeneticSupervisor: public Supervisor
 public:
     using Supervisor::Supervisor;
 
-    void train(NeuralNetwork &neuralNetwork) const override;
+    bool train(NeuralNetwork &neuralNetwork) const override;
 };

@@ -18,12 +18,13 @@ qreal randReal(const qreal min, const qreal max)
 }
 }
 
-void RandomSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool RandomSupervisor::train(NeuralNetwork &neuralNetwork) const
 {
     for (NeuralLayer &layer: neuralNetwork)
         for (Neuron &neuron: layer)
             for (int i = 0; i < neuron.weightNumber(); ++i)
                 neuron.setWeight(i, randReal(m_minWeight, m_maxWeight));
+    return true;
 }
 
 qreal RandomSupervisor::minWeight() const

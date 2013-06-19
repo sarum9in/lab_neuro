@@ -1,6 +1,6 @@
 #include "DeltaRuleSupervisor.hpp"
 
-void DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
 {
     Q_ASSERT(neuralNetwork.layerNumber() == 1);
     NeuralLayer &layer = neuralNetwork.layer(0);

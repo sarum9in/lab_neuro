@@ -18,7 +18,7 @@ public:
         setRandRange(minWeight, maxWeight);
     }
 
-    void train(NeuralNetwork &neuralNetwork) const override;
+    bool train(NeuralNetwork &neuralNetwork) const override;
 
     qreal minWeight() const;
     qreal maxWeight() const;

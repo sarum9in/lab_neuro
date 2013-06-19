@@ -28,7 +28,8 @@ public:
     qreal learningSpeed() const;
     void setLearningSpeed(const qreal learningSpeed);
 
-    virtual void train(NeuralNetwork &neuralNetwork) const=0;
+    /// \return true if all training examples work correct
+    virtual bool train(NeuralNetwork &neuralNetwork) const=0;
 
 private:
     TrainingVector m_trainingSet;

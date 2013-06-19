@@ -1,6 +1,6 @@
 #include "GeneticSupervisor.hpp"
 
-void GeneticSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool GeneticSupervisor::train(NeuralNetwork &neuralNetwork) const
 {
     // TODO
 }
