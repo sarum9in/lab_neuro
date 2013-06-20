@@ -33,7 +33,7 @@ void NeuralLayer::pushFront(const Neuron &neuron)
 void NeuralLayer::pushBack(const Neuron &neuron)
 {
     Q_ASSERT(empty() || inputNumber() == neuron.inputNumber());
-    m_neurons.push_front(neuron);
+    m_neurons.push_back(neuron);
 }
 
 void NeuralLayer::popFront()
