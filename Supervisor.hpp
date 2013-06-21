@@ -28,8 +28,12 @@ public:
     qreal learningSpeed() const;
     void setLearningSpeed(const qreal learningSpeed);
 
-    /// \return true if all training examples work correct
-    virtual bool train(NeuralNetwork &neuralNetwork) const=0;
+    /*!
+     * \return true if all training examples work correct
+     *
+     * \note Default implementation returns false.
+     */
+    virtual bool train(NeuralNetwork &neuralNetwork) const;
 
     /*!
      * \brief Train up to count times.

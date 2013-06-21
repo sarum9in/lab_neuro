@@ -27,6 +27,11 @@ void Supervisor::setLearningSpeed(const qreal learningSpeed)
     m_learningSpeed = learningSpeed;
 }
 
+bool Supervisor::train(NeuralNetwork &neuralNetwork) const
+{
+    return false;
+}
+
 bool Supervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
 {
     for (int i = 0; i < count; ++i)
