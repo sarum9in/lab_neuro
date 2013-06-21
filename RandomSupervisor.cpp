@@ -1,22 +1,8 @@
 #include "RandomSupervisor.hpp"
 
-#include <QDebug>
+#include "Random.hpp"
 
-namespace {
-qreal randReal(const qreal min, const qreal max)
-{
-    Q_ASSERT(min <= max);
-    const qreal d = max - min;
-    Q_ASSERT(d >= 0);
-    const qreal rnd = static_cast<qreal>(qrand()) / RAND_MAX;
-    const qreal r = d * rnd + min;
-    if (r < min)
-        return min;
-    if (r > max)
-        return max;
-    return r;
-}
-}
+#include <QDebug>
 
 bool RandomSupervisor::train(NeuralNetwork &neuralNetwork) const
 {

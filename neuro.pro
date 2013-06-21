@@ -28,7 +28,8 @@ SOURCES += Neuron.cpp \
     BackpropagationSupervisor.cpp \
     GeneticSupervisor.cpp \
     RandomSupervisor.cpp \
-    StochasticSupervisor.cpp
+    StochasticSupervisor.cpp \
+    Random.cpp
 
 HEADERS += Neuron.hpp\
         neuro_global.hpp \
@@ -46,7 +47,8 @@ HEADERS += Neuron.hpp\
     BackpropagationSupervisor.hpp \
     GeneticSupervisor.hpp \
     RandomSupervisor.hpp \
-    StochasticSupervisor.hpp
+    StochasticSupervisor.hpp \
+    Random.hpp
 
 unix:!symbian {
     maemo5 {
