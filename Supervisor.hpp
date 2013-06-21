@@ -36,7 +36,7 @@ public:
      *
      * \return last train() call (false if train() was not called)
      */
-    bool trainFor(NeuralNetwork &neuralNetwork, const int count) const;
+    virtual bool trainFor(NeuralNetwork &neuralNetwork, const int count) const;
 
 private:
     TrainingVector m_trainingSet;
