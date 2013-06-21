@@ -18,6 +18,8 @@ public:
     NeuralLayer &operator=(const NeuralLayer &)=default;
     NeuralLayer &operator=(NeuralLayer &&)=default;
 
+    void swap(NeuralLayer &neuralLayer) noexcept;
+
     bool empty() const;
     int neuronNumber() const;
     Neuron &neuron(const int index);

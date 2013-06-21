@@ -22,6 +22,8 @@ public:
     Neuron &operator=(const Neuron &)=default;
     Neuron &operator=(Neuron &&)=default;
 
+    void swap(Neuron &neuron) noexcept;
+
     /// Check if ActivationFunction is initialized.
     bool hasActivationFunction() const;
     const ActivationFunctionPointer &activationFunction() const;

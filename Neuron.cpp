@@ -15,6 +15,12 @@ Neuron::Neuron(const ActivationFunctionPointer &activationFunction, const Weight
     Q_ASSERT(!weights.empty());
 }
 
+void Neuron::swap(Neuron &neuron) noexcept
+{
+    m_activationFunction.swap(neuron.m_activationFunction);
+    m_weights.swap(neuron.m_weights);
+}
+
 bool Neuron::hasActivationFunction() const
 {
     return !m_activationFunction.isNull();

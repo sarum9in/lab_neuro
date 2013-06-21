@@ -18,6 +18,8 @@ public:
     NeuralNetwork &operator=(const NeuralNetwork &)=default;
     NeuralNetwork &operator=(NeuralNetwork &&)=default;
 
+    void swap(NeuralNetwork &neuralNetwork) noexcept;
+
     bool empty() const;
     int layerNumber() const;
     NeuralLayer &layer(const int index);

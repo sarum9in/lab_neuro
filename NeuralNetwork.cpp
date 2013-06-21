@@ -2,6 +2,11 @@
 
 #include <QDebug>
 
+void NeuralNetwork::swap(NeuralNetwork &neuralNetwork) noexcept
+{
+    m_layers.swap(neuralNetwork.m_layers);
+}
+
 bool NeuralNetwork::empty() const
 {
     return m_layers.empty();
