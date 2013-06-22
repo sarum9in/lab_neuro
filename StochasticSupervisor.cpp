@@ -4,6 +4,7 @@
 #include "RandomSupervisor.hpp"
 
 #include <QDebug>
+#include <QCoreApplication>
 
 namespace
 {
@@ -57,6 +58,12 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
                 qDebug() << 100. * e / count << error << bestError; // FIXME DEBUG
                 emit iterationInfo(e, count);
                 emit targetErrorInfo(EPS, error, bestError);
+                QCoreApplication::processEvents();
+                if (checkAborted())
+                {
+                    emit finished(false);
+                    return false;
+                }
             }
         }
         if (error > oldError)
