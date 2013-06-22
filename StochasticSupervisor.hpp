@@ -9,5 +9,5 @@ class NEUROSHARED_EXPORT StochasticSupervisor: public Supervisor
 public:
     using Supervisor::Supervisor;
 
-    bool trainFor(NeuralNetwork &neuralNetwork, const int count) const override;
+    bool trainFor(NeuralNetwork &neuralNetwork, const int count) override;
 };

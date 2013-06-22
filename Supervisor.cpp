@@ -27,12 +27,12 @@ void Supervisor::setLearningSpeed(const qreal learningSpeed)
     m_learningSpeed = learningSpeed;
 }
 
-bool Supervisor::train(NeuralNetwork &neuralNetwork) const
+bool Supervisor::train(NeuralNetwork &neuralNetwork)
 {
     return false;
 }
 
-bool Supervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
+bool Supervisor::trainFor(NeuralNetwork &neuralNetwork, const int count)
 {
     emit started(count);
     for (int i = 0; i < count; ++i)
@@ -42,5 +42,20 @@ bool Supervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
             return true;
         }
     emit finished(false);
+    return false;
+}
+
+void Supervisor::abort()
+{
+    m_aborted = true;
+}
+
+bool Supervisor::checkAborted()
+{
+    if (m_aborted)
+    {
+        m_aborted = false;
+        return true;
+    }
     return false;
 }

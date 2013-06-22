@@ -33,22 +33,29 @@ public:
      *
      * \note Default implementation returns false.
      */
-    virtual bool train(NeuralNetwork &neuralNetwork) const;
+    virtual bool train(NeuralNetwork &neuralNetwork);
 
     /*!
      * \brief Train up to count times.
      *
      * \return last train() call (false if train() was not called)
      */
-    virtual bool trainFor(NeuralNetwork &neuralNetwork, const int count) const;
+    virtual bool trainFor(NeuralNetwork &neuralNetwork, const int count);
+
+public slots:
+    void abort();
 
 signals:
-    void started(const int count) const;
-    void finished(const bool result) const;
-    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError) const;
-    void iterationInfo(const int currentIteration, const int maxIterations) const;
+    void started(const int count);
+    void finished(const bool result);
+    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError);
+    void iterationInfo(const int currentIteration, const int maxIterations);
+
+protected:
+    bool checkAborted();
 
 private:
     TrainingVector m_trainingSet;
     qreal m_learningSpeed = 1;
+    bool m_aborted = false;
 };

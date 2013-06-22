@@ -32,7 +32,7 @@ namespace
 constexpr qreal EPS = 0.1;
 constexpr qreal MAX_TEMPERATURE = 1000;
 
-bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
+bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int count)
 {
     emit started(count);
     qreal bestError = 1e100;

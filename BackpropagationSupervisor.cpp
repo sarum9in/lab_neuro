@@ -1,6 +1,6 @@
 #include "BackpropagationSupervisor.hpp"
 
-bool BackpropagationSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool BackpropagationSupervisor::train(NeuralNetwork &neuralNetwork)
 {
     // TODO
 }

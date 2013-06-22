@@ -2,7 +2,7 @@
 
 constexpr qreal EPS = 0.01;
 
-bool DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool DeltaRuleSupervisor::train(NeuralNetwork &neuralNetwork)
 {
     Q_ASSERT(neuralNetwork.layerNumber() == 1);
     NeuralLayer &layer = neuralNetwork.layer(0);

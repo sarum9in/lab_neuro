@@ -4,7 +4,7 @@
 
 #include <QDebug>
 
-bool RandomSupervisor::train(NeuralNetwork &neuralNetwork) const
+bool RandomSupervisor::train(NeuralNetwork &neuralNetwork)
 {
     for (NeuralLayer &layer: neuralNetwork)
         for (Neuron &neuron: layer)
