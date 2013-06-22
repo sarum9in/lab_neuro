@@ -59,3 +59,5 @@ bool Supervisor::checkAborted()
     }
     return false;
 }
+
+static const int trainingVectorId = qRegisterMetaType<TrainingVector>();
