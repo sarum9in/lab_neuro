@@ -39,10 +39,10 @@ signals:
     void start(const NeuralNetwork &NeuralNetwork, const int count);
     void resultReady(const bool result, const NeuralNetwork &neuralNetwork);
 
-    void started(const int count) const;
-    void finished(const bool result) const;
-    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError) const;
-    void iterationInfo(const int currentIteration, const int maxIterations) const;
+    void started(const int count);
+    void finished(const bool result);
+    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError);
+    void iterationInfo(const int currentIteration, const int maxIterations);
 
     void abortSent();
     void trainingSetUpdated(const TrainingVector &trainingSet);
