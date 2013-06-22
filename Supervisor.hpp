@@ -6,6 +6,7 @@
 #include "NeuralNetwork.hpp"
 
 #include <QObject>
+#include <QMetaType>
 
 struct TrainingExample
 {
@@ -59,3 +60,5 @@ private:
     qreal m_learningSpeed = 1;
     bool m_aborted = false;
 };
+
+Q_DECLARE_METATYPE(TrainingVector)
