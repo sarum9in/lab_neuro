@@ -16,10 +16,10 @@ public:
     explicit ThreadedSupervisorWorker(Supervisor *supervisor, QObject *parent=nullptr);
 
 signals:
-    void resultReady(const NeuralNetwork &neuralNetwork);
+    void resultReady(const bool result, const NeuralNetwork &neuralNetwork);
 
 public slots:
-    void doWork(NeuralNetwork neuralNetwork);
+    void doWork(NeuralNetwork neuralNetwork, const int count);
 
 private:
     Supervisor *const m_supervisor;
@@ -36,12 +36,21 @@ public:
     ~ThreadedSupervisor();
 
 signals:
-    void start(const NeuralNetwork &NeuralNetwork);
-    void started();
-    void finished(const NeuralNetwork &neuralNetwork);
+    void start(const NeuralNetwork &NeuralNetwork, const int count);
+    void resultReady(const bool result, const NeuralNetwork &neuralNetwork);
+
+    void started(const int count) const;
+    void finished(const bool result) const;
+    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError) const;
+    void iterationInfo(const int currentIteration, const int maxIterations) const;
+
+    void abortSent();
+    void trainingSetUpdated(const TrainingVector &trainingSet);
 
 public slots:
-    void train(const NeuralNetwork &neuralNetwork);
+    void trainFor(const NeuralNetwork &neuralNetwork, const int count);
+    void abort();
+    void setTrainingSet(const TrainingVector &trainingSet);
 
 private:
     QThread m_workerThread;
