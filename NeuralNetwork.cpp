@@ -103,3 +103,5 @@ DataVector NeuralNetwork::transform_(const DataVector &input) const
         v = layer.transform(v);
     return v;
 }
+
+static const int neuralNetworkId = qRegisterMetaType<NeuralNetwork>();
