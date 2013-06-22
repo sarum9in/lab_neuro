@@ -41,6 +41,8 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
     RandomSupervisor rnd(-5, 5);
     rnd.train(neuralNetwork);
     NeuralNetwork bestNetwork = neuralNetwork;
+    emit iterationInfo(0, count);
+    emit targetErrorInfo(EPS, bestError, bestError);
     for(int e = 1; e < count; ++e)
     {
         const qreal temperature = MAX_TEMPERATURE / (1 + e);
@@ -62,6 +64,7 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
                 if (checkAborted())
                 {
                     emit finished(false);
+                    qDebug() << "ABORTED";
                     return false;
                 }
             }
@@ -85,11 +88,17 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
         }
         if (error < EPS)
         {
+            emit iterationInfo(e, count);
+            emit targetErrorInfo(EPS, error, bestError);
             emit finished(true);
+            qDebug() << "SUCCESS";
             return true;
         }
     }
     neuralNetwork.swap(bestNetwork);
+    emit iterationInfo(count, count);
+    emit targetErrorInfo(EPS, bestError, bestError);
     emit finished(false);
+    qDebug() << "FAILED";
     return false;
 }
