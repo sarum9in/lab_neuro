@@ -34,8 +34,13 @@ bool Supervisor::train(NeuralNetwork &neuralNetwork) const
 
 bool Supervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
 {
+    emit started(count);
     for (int i = 0; i < count; ++i)
         if (train(neuralNetwork))
+        {
+            emit finished(true);
             return true;
+        }
+    emit finished(false);
     return false;
 }

@@ -42,6 +42,12 @@ public:
      */
     virtual bool trainFor(NeuralNetwork &neuralNetwork, const int count) const;
 
+signals:
+    void started(const int count) const;
+    void finished(const bool result) const;
+    void targetErrorInfo(const qreal targetError, const qreal currentError, const qreal bestError) const;
+    void iterationInfo(const int currentIteration, const int maxIterations) const;
+
 private:
     TrainingVector m_trainingSet;
     qreal m_learningSpeed = 1;
