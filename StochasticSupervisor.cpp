@@ -34,14 +34,12 @@ constexpr qreal MAX_TEMPERATURE = 1000;
 
 bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int count) const
 {
-    qreal errorBest = 1e100;
+    emit started(count);
+    qreal bestError = 1e100;
     NeuralNetwork networkBackup;
     RandomSupervisor rnd(-5, 5);
     rnd.train(neuralNetwork);
-    /*for (NeuralLayer &layer: neuralNetwork)
-        for (Neuron &neuron: layer)
-            neuron.setBias(0);*/
-    NeuralNetwork networkBest = neuralNetwork;
+    NeuralNetwork bestNetwork = neuralNetwork;
     for(int e = 1; e < count; ++e)
     {
         const qreal temperature = MAX_TEMPERATURE / (1 + e);
@@ -53,7 +51,14 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
                 for (int i = 0; i < neuron.weightNumber(); ++i)
                     neuron.setWeight(i, neuron.weight(i) + randReal(-0.25, 0.25));
         const qreal error = getError(neuralNetwork, trainingSet());
-        if ((e - 1) * 1000 % count == 0) qDebug() << 100. * e / count << error << errorBest; // FIXME DEBUG
+        { // info
+            if (e % 100 == 0)
+            {
+                qDebug() << 100. * e / count << error << bestError; // FIXME DEBUG
+                emit iterationInfo(e, count);
+                emit targetErrorInfo(EPS, error, bestError);
+            }
+        }
         if (error > oldError)
         {
             const qreal errorDiff = error - oldError;
@@ -65,15 +70,19 @@ bool StochasticSupervisor::trainFor(NeuralNetwork &neuralNetwork, const int coun
         }
         else
         {
-            if (error < errorBest)
+            if (error < bestError)
             {
-                networkBest = neuralNetwork;
-                errorBest = error;
+                bestNetwork = neuralNetwork;
+                bestError = error;
             }
         }
         if (error < EPS)
+        {
+            emit finished(true);
             return true;
+        }
     }
-    neuralNetwork.swap(networkBest);
+    neuralNetwork.swap(bestNetwork);
+    emit finished(false);
     return false;
 }
